@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitezin</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    body{
+        background-image: url(wallpaperbetter\ \(1\).jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: -15vh;
+        height: 90%;
+    }
+
+    .menu{
+        position: fixed;
+        background-color: rgb(27, 118, 221);
+        width: 30px;
+        height: 30px;
+        top: 10px;
+        right: 25px;
+        border-radius: 50%;
+    }
+
+    .menu:hover{
+        cursor: pointer;
+    }
+
+    .hamburguer{
+        position: relative;
+        display: block;
+        background: black;
+        width: 15px;
+        height: 1px;
+        top: 15px;
+        left: 7px;
+        transition: 0.5s ease-in-out;
+    }
+
+    .hamburguer::before,
+    .hamburguer::after {
+        background: black;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: 0.5s ease-in-out;
+    }
+
+    .hamburguer::before{
+        top: -5px;
+    }
+
+    .hamburguer::after{
+        bottom: -5px;
+    }
+    input{
+        display: none;
+    }
+
+    input:checked ~ label .hamburguer{
+        transform: rotate(45deg);
+    }
+
+    input:checked ~ label .hamburguer::before{
+        transform: rotate(90deg);
+        top: 0;
+    }
+
+    input:checked ~ label .hamburguer::after{
+        transform: rotate(90deg);
+        bottom: 0;
+    }
+
+    input:checked ~ nav{
+        opacity: 100%;
+        transition: 1s;
+    }
+
+    .telaon{
+       transition: 1s;
+       position: absolute;
+       margin-top: 10vh;
+       width: 250px;
+       height: 500px;
+       border-radius: 30px;
+       background-image: url(tealon.png);
+       right: 10px;
+       opacity: 0;
+       z-index: 2;
+    }
+
+    .capa{
+        position: absolute;
+        background-color: black;
+        width: 260px;
+        height: 510px;
+        top: 9vh;
+        right: 5px;
+        border-radius: 30px;
+        z-index: -1;
+    }
+
+    .telaoff{
+       transition: 1s;
+       position: absolute;
+       margin-top: 10vh;
+       width: 250px;
+       height: 500px;
+       border-radius: 30px;
+       right: 10px;
+       background-color: rgb(27, 27, 27);
+       z-index: 1;
+       background-image: url(sansung.png);
+       background-repeat: no-repeat;
+       background-position-x: center;
+       background-position-y: 30%;
+       opacity: 50%;
+    }
+
+    input:checked ~ .telaon{
+        opacity: 100%;
+        transition: 1s ease-in-out;
+    }
+    input:checked ~ .telaoff{
+        opacity: 0%;
+        transition: 1s ease-in-out;
+    }
+
+    .menuh{
+        position: absolute;
+        right: 20px;
+        bottom: 23vh;
+        opacity: 0;
+        z-index: 3;
+    }
+
+    button:hover{
+        cursor: pointer;
+    }
+    .btn1{
+        background-color: transparent;
+        border: none;
+        margin-right: 50px;
+    }
+    .btn2{
+        background-color: transparent;
+        border: none;
+        margin-right: 50px;
+    }
+
+    .btn3{
+        background-color: transparent;
+        border: none;
+    }
+    
+
+</style>
+<body>
+        <input id="menu-hamburguer" type="checkbox">
+    <label for="menu-hamburguer">
+        <div class="menu">
+           <span class="hamburguer"></span>
+    </div>
+    </label>
+    <div class="telaon"></div>
+    <div class="capa"></div>
+    <div class="telaoff"></div>
+    <nav class="menuh">
+        <button class="btn1"><img src="icons8-google-logo-40.png" alt=""></button>
+        <button class="btn2"><img src="icons8-google-play-40.png" alt=""></button>
+        <button class="btn3"><img src="icons8-whatsapp-40.png" alt=""></button>
+    </nav>       
+
+</body>
+</html>
